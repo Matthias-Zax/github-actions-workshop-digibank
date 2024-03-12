@@ -11,9 +11,10 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: check env
-        run: "hui: {{ var.TOMCAT_PATH }} "
+        run: echo "hui: ${{ vars.TOMCAT_PATH }}"
+      
       
       - name: Run SAST checks
         continue-on-error: true
