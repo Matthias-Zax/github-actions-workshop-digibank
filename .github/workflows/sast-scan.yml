@@ -1,0 +1,29 @@
+name: sast-scan
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and run Unit Tests
+    runs-on: ubuntu-latest
+    environment: UAT
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: check env
+        run: "hui: {{ var.tomact_path }} "
+      
+      - name: Run SAST checks
+        continue-on-error: true
+        uses: AppThreat/sast-scan-action@master
+        with:
+          output: reports
+          type: java
+
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: sast-scan-reports
+          path: reports
