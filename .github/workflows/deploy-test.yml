@@ -10,7 +10,6 @@ on:
 
 env:
   UAT_IP: ${{ inputs.sut }}
-  UAT_TOMCAT: /home/ec2-user/tomcat/apache-tomcat-9.0.71/webapps
   UAT_PORT: 22
 
 jobs:
@@ -93,7 +92,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ env.UAT_PORT }}
-          script: cp -f /home/ec2-user/deployment/target/digibank.war ${{ env.UAT_TOMCAT }}
+          script: cp -f /home/ec2-user/deployment/target/digibank.war ${{ vars.TOMCAT_PATH }}
           
   automation_tests:
     needs: install
