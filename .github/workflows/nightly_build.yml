@@ -33,3 +33,16 @@ jobs:
         with:
           name: digibank.war
           path: ./target/digibank*
+    
+      - name: Run SAST checks
+        continue-on-error: true
+        uses: AppThreat/sast-scan-action@master
+        with:
+          output: reports
+          type: java
+
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: sast-scan-reports
+          path: reports
