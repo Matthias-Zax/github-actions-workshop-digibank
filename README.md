@@ -1,4 +1,5 @@
 # Digital Bank
+[![build and run e2e tests](https://github.com/Matthias-Zax/github-actions-workshop-digibank/actions/workflows/main.yml/badge.svg)](https://github.com/Matthias-Zax/github-actions-workshop-digibank/actions/workflows/main.yml)
 
 Digital Bank is a sample application that was developed for exploratory purposes to examine development frameworks and techniques. The application is an example online digital banking application with integrations into other services.
 
