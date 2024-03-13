@@ -2,7 +2,7 @@
 
 Digital Bank is a sample application that was developed for exploratory purposes to examine development frameworks and techniques. The application is an example online digital banking application with integrations into other services.
 
-# Recommended TOCMAT_PATH
+# Recommended TOMCAT_PATH
 /home/ec2-user/tomcat/apache-tomcat-9.0.71/webapps
 
 ## Getting Started
